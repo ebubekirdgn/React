@@ -1,7 +1,4 @@
-import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import Login from './components/Login';
 import User from './components/User';
 
 // const isLoggedIn = true;
@@ -22,7 +19,11 @@ function App() {
 
   return(
    <div>
-    <User data={user} friends = {["Ahmet","Selim","Ayşe","Fatma"]}/>
+      <User 
+      name = "asdasd"
+      city="SAAmsun"
+      age= {30}
+      />
   </div>
   )
 }
