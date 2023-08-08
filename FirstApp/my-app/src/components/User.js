@@ -41,9 +41,10 @@ console.log(friends)
           <div>Soyisim : {data.Usersurname}</div>    
           <div>Yaş : {data.age}</div>   
           <h3>Arkadaşlar</h3>
-          {friends.map((friend) => (
-                <div>{friend}</div>
-            ))
+          {
+          friends.map((friend,i) => (
+            <div  key={i}>{friend}</div>
+          ))
           }
           <hr/>
       </div> 
