@@ -20,9 +20,11 @@ function App() {
   //    }
   //   </div>;
 
-  return <div>
-    <User data={user}/>
+  return(
+   <div>
+    <User data={user} friends = {["Ahmet","Selim","Ayşe","Fatma"]}/>
   </div>
+  )
 }
 
 export default App;
