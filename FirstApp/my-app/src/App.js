@@ -2,8 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 
+const name = "Ebubekir";
+let surname = "Doğan"
 function App() {
-  return <div> <Header/></div>;
+  return <div> <Header/> {name} {surname}</div>;
  
 }
 
