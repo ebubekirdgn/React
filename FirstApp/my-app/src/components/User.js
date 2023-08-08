@@ -6,9 +6,9 @@ function User(props) {
   return (
     <div>
         User
-        <div>İsim : Ebubekir</div>    
-        <div>Soyisim : Dogan</div>    
-        <div>Yaş : 30</div>    
+        <div>İsim : {props.name}</div>    
+        <div>Soyisim : {props.surname}</div>    
+        <div>Yaş : {props.age}</div>    
     </div> 
   )
 }

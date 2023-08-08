@@ -16,7 +16,7 @@ function App() {
   //   </div>;
 
   return <div>
-    <User name="Ebubekir"/>
+    <User name="dede" surname="dogan" age = {30}/>
   </div>
 }
 
