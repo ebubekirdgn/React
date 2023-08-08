@@ -1,16 +1,28 @@
 import React from 'react'
 
-function User(props) {
-    console.log(props);
+// function User({data}) {
 
-  return (
-    <div>
-        User
-        <div>İsim : {props.name}</div>    
-        <div>Soyisim : {props.surname}</div>    
-        <div>Yaş : {props.age}</div>    
-    </div> 
-  )
-}
+//   return (
+//     <div>
+//         User
+//         <div>İsim : {data.name}</div>    
+//         <div>Soyisim : {data.surname}</div>    
+//         <div>Yaş : {data.age}</div>    
+//     </div> 
+//   )
+// }
 
+// Yöntem 2
+function User({data :{name,surname,age}}) {
+
+    return (
+      <div>
+          User
+          <div>İsim : {name}</div>    
+          <div>Soyisim : {surname}</div>    
+          <div>Yaş : {age}</div>    
+      </div> 
+    )
+  }
+  
 export default User;

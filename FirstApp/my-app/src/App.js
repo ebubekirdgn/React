@@ -7,6 +7,11 @@ import User from './components/User';
 // const isLoggedIn = true;
 // const fullname = "Ebubekir";
  
+const user = {
+  name  : "Ebubekir",
+  surname : "Dogan",
+  age : 30,
+}
 
 function App() {
   // return <div className="test"> 
@@ -16,7 +21,7 @@ function App() {
   //   </div>;
 
   return <div>
-    <User name="dede" surname="dogan" age = {30}/>
+    <User data={user}/>
   </div>
 }
 
