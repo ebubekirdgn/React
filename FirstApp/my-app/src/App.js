@@ -16,10 +16,7 @@ function App() {
   //   </div>;
 
   return <div>
-    <User/>
-    <User/>
-    <User/>
-    <User/>
+    <User name="Ebubekir"/>
   </div>
 }
 
