@@ -17,6 +17,9 @@ function App() {
 
   return <div>
     <User/>
+    <User/>
+    <User/>
+    <User/>
   </div>
 }
 
