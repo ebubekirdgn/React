@@ -25,7 +25,9 @@ function App() {
       age= {30}
       /> */}
 
-      <Counter/>
+      {/* <Counter/> */}
+
+      <User/>
   </div>
   )
 }
