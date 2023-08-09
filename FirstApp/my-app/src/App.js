@@ -1,6 +1,6 @@
 import './App.css';
 import User from './components/User';
-
+import Counter from './components/Counter';
 // const isLoggedIn = true;
 // const fullname = "Ebubekir";
  
@@ -19,11 +19,13 @@ function App() {
 
   return(
    <div>
-      <User 
+      {/* <User 
       name = "asdasd"
       city="SAAmsun"
       age= {30}
-      />
+      /> */}
+
+      <Counter/>
   </div>
   )
 }
