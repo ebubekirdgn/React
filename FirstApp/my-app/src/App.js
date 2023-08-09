@@ -2,6 +2,7 @@ import './App.css';
 import User from './components/User';
 import Counter from './components/Counter';
 import Colors from './components/Colors';
+import Form from './components/Form';
 // const isLoggedIn = true;
 // const fullname = "Ebubekir";
  
@@ -27,8 +28,8 @@ function App() {
       /> */}
 
       {/* <Counter/> */}
-      <User/>
-
+      {/* <User/> */}
+      <Form/>
       {/* <Colors/> */}
   </div>
   )
