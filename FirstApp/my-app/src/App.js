@@ -1,14 +1,15 @@
 import './App.css';
 import User from './components/User';
 import Counter from './components/Counter';
+import Colors from './components/Colors';
 // const isLoggedIn = true;
 // const fullname = "Ebubekir";
  
-const user = {
-  name  : "Ebubekir",
-  surname : "Dogan",
-  age : 30,
-}
+// const user = {
+//   name  : "Ebubekir",
+//   surname : "Dogan",
+//   age : 30,
+// }
 
 function App() {
   // return <div className="test"> 
@@ -27,7 +28,7 @@ function App() {
 
       {/* <Counter/> */}
 
-      <User/>
+      <Colors/>
   </div>
   )
 }
