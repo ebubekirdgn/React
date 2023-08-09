@@ -71,7 +71,7 @@
 import React,{ useState } from "react"
 
 function User() {
-const [user ,setUser] = useState({name: "Ebubekir",surname:"Dogan"});
+const [user ,setUser] = useState({name: "Ebubekir",surname:" Dogan"});
   
   return (
     <div>
@@ -80,7 +80,7 @@ const [user ,setUser] = useState({name: "Ebubekir",surname:"Dogan"});
       {user.surname}
       <div>
       <button onClick={() => setUser({...user,name:"Salih"})}>İsmi Değiştir</button>
-      <button onClick={() => setUser({...user,surname:"Saraç"})}>Soyismi Değiştir</button>
+      <button onClick={() => setUser({...user,surname:" Saraç"})}>Soyismi Değiştir</button>
 
       </div>
       </div>
