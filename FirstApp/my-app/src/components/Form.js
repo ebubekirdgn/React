@@ -3,6 +3,7 @@
  function Form() {
     const [name,setName] = useState("");
     const [surname,setSurname] = useState("");
+    const [gender,setGender] = useState("0");
 
    return (
      <div>
@@ -17,10 +18,15 @@
             </strong>
         </div>
         <div>
-            <select>
-                <option>Erkek</option>
-                <option>Kadın</option>
+            <select value={gender} onChange={(event)=> setGender(event.target.value)}>
+                <option value="0" >Erkek</option>
+                <option value="1" >Kadın</option>
             </select>
+        </div>
+        <div>
+            <strong>
+                {gender ==='0' ? "Erkek" : "Kadın"}
+            </strong>
         </div>
         
     </div>
