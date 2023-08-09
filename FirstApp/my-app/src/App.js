@@ -27,8 +27,9 @@ function App() {
       /> */}
 
       {/* <Counter/> */}
+      <User/>
 
-      <Colors/>
+      {/* <Colors/> */}
   </div>
   )
 }

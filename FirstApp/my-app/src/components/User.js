@@ -81,6 +81,7 @@ const [user ,setUser] = useState({name: "Ebubekir",surname:" Dogan"});
       <div>
       <button onClick={() => setUser({...user,name:"Salih"})}>İsmi Değiştir</button>
       <button onClick={() => setUser({...user,surname:" Saraç"})}>Soyismi Değiştir</button>
+      <button onClick={() => setUser((prev) => ({...prev,name:"Kerim"}))}>İsmi Değiştir</button>
 
       </div>
       </div>
