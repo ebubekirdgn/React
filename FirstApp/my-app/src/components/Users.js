@@ -4,6 +4,7 @@ import axios from "axios"
 function Users() {
 
   const [users,setUsers] = useState([]);
+  const [posts,setPosts] = useState([]);
   const [loading,setLoading] = useState(true);
   
   
@@ -14,10 +15,22 @@ function Users() {
   //   .finally(() => setLoading(false))
   // },[]);
 
+  // useEffect(() => {
+  //   axios("https://jsonplaceholder.typicode.com/users")
+  //   .then((response) => setUsers(response.data))
+  //   .finally(() => setLoading(false))
+  // },[]);
+
   useEffect(() => {
     axios("https://jsonplaceholder.typicode.com/users")
-    .then((response) => setUsers(response.data))
-    .finally(() => setLoading(false))
+    .then ((res) => {
+      setUsers(res.data);
+
+      axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
+      .then((res) => setPosts(res.data));
+    
+    })
+    .finally(() => setLoading(false));
   },[]);
 
     return (
@@ -31,8 +44,13 @@ function Users() {
         {users.map((user) => (
             <li key= {user.id}>{user.name}</li>  
         ))}
+      </ul>  
         
-       
+      <h2>Posts</h2>
+        <ul>
+        {posts.map((post) => (
+            <li key= {post.id}>{post.title}</li>  
+        ))}
       </ul>  
     </div>
   )
