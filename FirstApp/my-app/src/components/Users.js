@@ -22,16 +22,31 @@ function Users() {
   // },[]);
 
   useEffect(() => {
-    axios("https://jsonplaceholder.typicode.com/users")
-    .then ((res) => {
-      setUsers(res.data);
+    // axios("https://jsonplaceholder.typicode.com/users")
+    // .then ((res) => {
+    //   setUsers(res.data);
 
-      axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
-      .then((res) => setPosts(res.data));
+    //   axios(`https://jsonplaceholder.typicode.com/posts?userId=${res.data[0].id}`)
+    //   .then((res) => setPosts(res.data));
     
-    })
-    .finally(() => setLoading(false));
+    // })
+    // .finally(() => setLoading(false));
+    getData();
   },[]);
+
+
+
+  const getData = async () => {
+    const {data : users} = await  axios("https://jsonplaceholder.typicode.com/users");
+    const {data:posts} = await  axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
+    setLoading(false)
+    setUsers(users);
+    setUsers(posts);
+
+    console.log("users",users)
+    console.log("posts",posts)
+  };
+
 
     return (
     <div>
