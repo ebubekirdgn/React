@@ -22,6 +22,8 @@ function Users() {
   // },[]);
 
   useEffect(() => {
+    /// -------------------- 1 . solution---------------------------------
+    
     // axios("https://jsonplaceholder.typicode.com/users")
     // .then ((res) => {
     //   setUsers(res.data);
@@ -31,44 +33,53 @@ function Users() {
     
     // })
     // .finally(() => setLoading(false));
-    getData();
-  },[]);
 
-
-
-  const getData = async () => {
-    try {
+  /// -------------------- 2 . solution---------------------------------
+    const getData = async () => {
+     
+      try {
         const {data : users} = await  axios("https://jsonplaceholder.typicode.com/users");
         const {data:posts} = await  axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
         setLoading(false)
         setUsers(users);
-        setUsers(posts);
-    } catch (error) {
-      console.log("error",error)
-    }
-    console.log("users",users)
-    console.log("posts",posts)
-  };
+        setPosts(posts);
+      } catch (error) {
+        console.log("error",error)
+      }
+    };
+    getData();
+     /// -------------------- 3 . solution---------------------------------
 
+     (async () => {
+     
+      try {
+        const {data : users} = await  axios("https://jsonplaceholder.typicode.com/users");
+        const {data:posts} = await  axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
+        setLoading(false)
+        setUsers(users);
+        setPosts(posts);
+      } catch (error) {
+        console.log("error",error)
+      }
+    })();
+  },[]);
 
+ 
+  
+ 
+   
     return (
     <div>
       <h2>Users</h2>
-
-      {
-        loading && <div>YÜKLENİYOR</div>
-      }
+       <hr/>
+      {loading && <div> YÜKLENİYOR... </div>}
       <ul>
-        {users.map((user) => (
-            <li key= {user.id}>{user.name}</li>  
-        ))}
+        {users.map((user) => (<li key= {user.id}>{user.username}</li>))}
       </ul>  
         
       <h2>Posts</h2>
-        <ul>
-        {posts.map((post) => (
-            <li key= {post.id}>{post.title}</li>  
-        ))}
+      <hr/>
+      <ul>{posts.map((post) => (<li key= {post.id}>{post.title}</li>))}
       </ul>  
     </div>
   )
