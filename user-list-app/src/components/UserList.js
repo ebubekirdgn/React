@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-function UserList() {
+function UserList({setActiveUserId}) {
 
 const [users,setUsers] = useState([]);
 const [loading,setLoading] = useState(true);
@@ -20,19 +20,14 @@ useEffect(() => {
         <h2>Users</h2>
         {loading && <div> Yükleniyor </div>}
         <ul className='userList'>
-
-        {
-             users.map((user)=> (
-              <li key={user.key}>{user.name}</li>
-             ))
-
-        }
+          {users.map((user)=> (
+                <li key={user.id} onClick={()=> setActiveUserId(user.id)}>
+                  {user.name}
+                </li>
+          ))}
         </ul>
-        
-        
-
     </div>
-  )
+  );
 }
 
 export default UserList
