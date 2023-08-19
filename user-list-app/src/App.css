@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  display: flex;
+  width: 700px;
+  margin:0 auto;
+}
+
+.App > div {
+ flex:1;
+ border: solid 1px #ccc;
+ padding: 10px;
+}
