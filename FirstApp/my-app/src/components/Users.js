@@ -61,12 +61,8 @@ function Users() {
       } catch (error) {
         console.log("error",error)
       }
-    })();
+    })();   
   },[]);
-
- 
-  
- 
    
     return (
     <div>
