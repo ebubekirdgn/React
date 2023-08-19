@@ -37,12 +37,15 @@ function Users() {
 
 
   const getData = async () => {
-    const {data : users} = await  axios("https://jsonplaceholder.typicode.com/users");
-    const {data:posts} = await  axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
-    setLoading(false)
-    setUsers(users);
-    setUsers(posts);
-
+    try {
+        const {data : users} = await  axios("https://jsonplaceholder.typicode.com/users");
+        const {data:posts} = await  axios(`https://jsonplaceholder.typicode.com/posts?userId=${users[0].id}`);
+        setLoading(false)
+        setUsers(users);
+        setUsers(posts);
+    } catch (error) {
+      console.log("error",error)
+    }
     console.log("users",users)
     console.log("posts",posts)
   };
