@@ -16,7 +16,9 @@ function Users() {
       {
         users.map((user) => (
             // /users/10 vs yazması icin asagıdaki gibi yapıyoruz
-            <li key={user.id}><Link to={`${user.id}`}>{user.name}</Link></li>
+            <li key={user.id}>
+              <Link to={`${user.id}`} state={{user}}>{user.name}</Link>
+            </li>
         ))
       }
       </ul>
