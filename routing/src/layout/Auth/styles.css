@@ -13,3 +13,7 @@
 .auth-menu a{
    text-decoration: none;
 }
+
+.error {
+    color: crimson;
+}
