@@ -7,7 +7,7 @@ function Contacts() {
     initialValues: { firstname: "", lastname: "", email: "", message: "" },
     onSubmit: async (values,bag) => {
       // await new Promise((r) =>    setTimeout(r,1000))
-      //console.log(bag);   Formla alakalı yapabileceğimiz  cogu sey gelir burada
+      console.log(bag);   //Formla alakalı yapabileceğimiz  cogu sey gelir burada
       console.log(values);
       bag.resetForm();
     },
