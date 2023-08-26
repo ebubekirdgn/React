@@ -1,3 +1,4 @@
+import "./styles.css";
 import ChangeLang from "./components/ChangeLang";
 import ChangeTheme from "./components/ChangeTheme";
 import Footer from "./components/Footer";
@@ -6,7 +7,7 @@ import { ThemeContextProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
-    <div>
+    <div className="container ">
       <LangContextProvider>
         <ThemeContextProvider value={"light"}>
           <ChangeTheme />
