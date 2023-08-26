@@ -1,5 +1,14 @@
+import ChangeTheme from "./components/ChangeTheme";
+import ThemeContext from "./contexts/ThemeContext";
+
 function App() {
-  return <div className="App">TEST</div>;
+  return (
+   <div>
+      <ThemeContext.Provider value={"light"}>
+          <ChangeTheme/>
+      </ThemeContext.Provider>
+   </div>
+   );
 }
 
 export default App;
