@@ -1,11 +1,13 @@
 import ChangeTheme from "./components/ChangeTheme";
+import Footer from "./components/Footer";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
 
 function App() {
   return (
     <div>
       <ThemeContextProvider value={"light"}>
-        <ChangeTheme></ChangeTheme>
+        <ChangeTheme />
+        <Footer />
       </ThemeContextProvider>
     </div>
   );

@@ -1,16 +1,14 @@
-import React,{useContext} from 'react'
-import ThemeContext from '../contexts/ThemeContext'
+import React, { useContext } from "react";
+import ThemeContext from "../contexts/ThemeContext";
 
 function ChangeTheme() {
-    const data = useContext(ThemeContext);
-    console.log(data)
+  const { theme, setTheme } = useContext(ThemeContext);
   return (
     <div>
-        <div>Aktif Tema : {data}</div>
-       <button> ChangeTheme</button>
-        
+      <div>Aktif Tema : {theme}</div>
+      <button onClick={() => setTheme("dark")}> ChangeTheme</button>
     </div>
-  )
+  );
 }
 
-export default ChangeTheme
+export default ChangeTheme;
