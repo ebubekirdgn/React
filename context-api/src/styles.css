@@ -15,3 +15,7 @@ margin: 0;
 .dark *{
     color: wheat;
 }
+
+.dark button {
+    color: black;
+}

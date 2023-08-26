@@ -1,24 +1,14 @@
 import "./styles.css";
-import ChangeLang from "./components/ChangeLang";
-import ChangeTheme from "./components/ChangeTheme";
-import Footer from "./components/Footer";
 import { LangContextProvider } from "./contexts/LangContext";
 import { ThemeContextProvider } from "./contexts/ThemeContext";
+import Container from "./Container";
 
-function App() {
-  return (
-    <div className="container ">
-      <LangContextProvider>
-        <ThemeContextProvider value={"light"}>
-          <ChangeTheme />
-          <hr></hr>
-          <ChangeLang></ChangeLang>
-          <Footer />
-        </ThemeContextProvider>
-      </LangContextProvider>
-
-    </div>
-  );
-}
+const App = () => (
+  <LangContextProvider>
+    <ThemeContextProvider value={"light"}>
+      <Container />
+    </ThemeContextProvider>
+  </LangContextProvider>
+);
 
 export default App;
