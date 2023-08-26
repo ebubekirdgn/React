@@ -2,11 +2,13 @@ import { useContext } from "react"
 import ThemeContext from "../contexts/ThemeContext"
 
 function Footer() {
-    const {theme} = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div>
       <hr />
-      <div>Footer Aktif Tema : {theme}</div>
+      Footer 
+      <div>Aktif Tema : {theme}</div>
+      <button onClick={toggleTheme}>Temayı Değiştir</button>
     </div>
   );
 }
