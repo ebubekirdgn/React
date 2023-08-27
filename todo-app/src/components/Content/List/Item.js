@@ -1,14 +1,15 @@
 import React from 'react'
 import { useTodo } from '../../../context/ToDoContext'
 
-function Item() {
+function Item({todo}) {
   return (
-      <ul className="todo-list">
-            {todos.map((todo) => (
-                <Item key={todo.id} todo={todo}></Item>
-            ))};
-            
-      </ul>
+      <li key={todo.id} className={todo.completed ? "completed" : ""}>
+        <div className="view">
+            <input className="toggle" type="checkbox" defaultChecked = {todo.completed} onChange={}></input>
+            <label>{todo.tex}</label>
+            <button className="destroy"></button>
+        </div>
+      </li>
   )
 }
 
