@@ -24,7 +24,10 @@ function ToDo() {
 
     return (
         <div>
-            <input value={text} onChange={(e) => setText(e.target.value)}></input>
+            <label>
+                Text 
+                <input value={text} onChange={(e) => setText(e.target.value)}></input>
+            </label>
             <button onClick={addItem}> Add </button>
             <br />
             {
