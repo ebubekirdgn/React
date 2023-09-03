@@ -3,32 +3,43 @@ import userEvent from '@testing-library/user-event';
 
 import Counter from "./index";
 
-describe('Counter Tests',() => {
+describe('Counter Tests', () => {
+    let increaseBtn, decreaseBtn, count;
+
+    beforeEach(() => {
+        render(<Counter />);  // render et 
+        increaseBtn = screen.getByText("Increase");  // Increase yazan butonu bul seç
+        decreaseBtn = screen.getByText("Decrease"); // Decrease yazan butonu bul seç 
+        count = screen.getByText("0");
+        console.log("beforeEach => Her testten önce çalışacağım.");
+
+    })
+
+    beforeAll(() => {
+        console.log("beforeAll => İlk başta bir kere çalışacağım.");
+    })
+
+    afterAll(() => {
+        console.log("afterAll => En son bir kere çalışacağım")
+    })
+
+    afterEach(() => {
+        console.log("afterEach => Her testten sonra çalışacağım")
+    })
+
     test("increase btn", () => {
 
-        render(<Counter />);   // render et 
-    
-        const count = screen.getByText("0");
-        const increaseBtn = screen.getByText("Increase");  // increase yazan butonu bul seç
-    
         fireEvent.click(increaseBtn); // butona tıklattık 
         expect(count).toHaveTextContent("1");
     });
-    
-    
+
+
     test("decrease btn", () => {
-    
-        render(<Counter />);   // render et 
-    
-        const count = screen.getByText("0");
-        const decreaseBtn = screen.getByText("Decrease");  // increase yazan butonu bul seç
-    
+
         fireEvent.click(decreaseBtn); // butona tıklattık 
-    
         expect(count).toHaveTextContent("-1");
     });
 })
 
 
 
-  
